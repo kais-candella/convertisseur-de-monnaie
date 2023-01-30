@@ -1,10 +1,10 @@
-
 from tkinter import *
 
-from PIL import Image, ImageTk
+from tkinter import ttk
 
 fenetre = Tk()
 fenetre.title("Convertir ses monnaies")
+fenetre.geometry("500x700")
 
 #flag of countries / drapeau des pays 
 
@@ -31,20 +31,48 @@ label_choix_monnaie2.place( relx=0.5, rely=0.35,anchor=N )
 sens = StringVar()
 
 #ajout éléments liste déroulante
+#premiere liste
+def Combo_pays_onselect(evt):
+    valeur = Combo_pays.get()
+    index = Combo_pays.current()
+    print("index: " + str(index) + "valeur: " + valeur )
 
-devises = {"USD": {"nom_pays": "États-Unis", "nom_devise": "Dollar des États-Unis", "icone": PhotoImage(file="Ce PC/Documents/Python3/country-flags-main/png100px/us.png")}}
-    
+
+Combo_pays = ttk.Combobox(fenetre)
+
+Combo_pays["values"] = ("EUR->Europe","USD->USA","JPY->Japon","GBP->angleterre","CHF-> Suisse","INR->Inde","RUB->Russe","CNY->Chine","MXN->Mexique","AUD->Australie","CAD->Canada","ZAR->Afrique du sud",)
+Combo_pays["state"] = "readonly"
+Combo_pays.pack()
+Combo_pays.place( relx=0.5, rely=0.16,anchor=N)
 
 
-var_devise = StringVar(fenetre)
-var_devise.set("USD")
 
-menu_devise = OptionMenu(fenetre, var_devise, *devises)
-menu_devise.config(width=20, font=("Arial", 12))
-menu_devise.pack()
 
-icone = ImageTk.PhotoImage(Image.open(devises[var_devise.get()]["icone"]))
-label_icone = Label(fenetre, image=icone)
-label_icone.pack()
+
+#2e liste
+
+def Combo_pays_onselect(evt):
+    valeur = Combo_pays2.get()
+    index = Combo_pays2.current()
+    print("index: " + str(index) + "valeur: " + valeur )
+
+
+Combo_pays2 = ttk.Combobox(fenetre)
+
+Combo_pays2["values"] = ("EUR->Europe","USD->USA","JPY->Japon","GBP->angleterre","CHF-> Suisse","INR->Inde","RUB->Russe","CNY->Chine","MXN->Mexique","AUD->Australie","CAD->Canada","ZAR->Afrique du sud",)
+Combo_pays2["state"] = "readonly"
+Combo_pays2.pack()
+Combo_pays2.place( relx=0.5, rely=0.412,anchor=N)
+
+#ajout des image
+
+#gestion de l'evenement combobox
+
+#premiere liste
+Combo_pays.bind("<<ComboboxSelected>>", Combo_pays_onselect)
+
+#2e liste
+Combo_pays2.bind("<<ComboboxSelected>>", Combo_pays_onselect)
+
 
 fenetre.mainloop()
