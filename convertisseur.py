@@ -6,13 +6,14 @@ fenetre = Tk()
 fenetre.title("Convertir ses monnaies")
 fenetre.geometry("500x700")
 
+
 #flag of countries / drapeau des pays 
 
 #tools / outils titre et texte
 
 label_titre_haut = Label(master=fenetre, text="Convertisseur",fg='powderblue')
 label_titre_haut.configure(font=("Akira expanded", 20))
-fenetre.configure( width=550, height=800 )
+fenetre.configure( width=550, height=800 , )
 label_titre_haut.place( relx=0.5, rely=0.01,anchor=N )
 sens = StringVar()
 
@@ -47,6 +48,12 @@ Combo_pays.place( relx=0.5, rely=0.16,anchor=N)
 
 
 
+L1 = Label(fenetre,font=("Arial",10),text="Nombre à convertir ->")
+L1.pack( side = LEFT)
+L1.place(  relx=0.22, rely=0.25,anchor=N)
+E1 = Entry(fenetre, bd =3,)
+E1.pack(side = LEFT)
+E1.place( relx=0.5, rely=0.25,anchor=N)
 
 
 #2e liste
@@ -63,6 +70,22 @@ Combo_pays2["values"] = ("EUR->Europe","USD->USA","JPY->Japon","GBP->angleterre"
 Combo_pays2["state"] = "readonly"
 Combo_pays2.pack()
 Combo_pays2.place( relx=0.5, rely=0.412,anchor=N)
+
+
+L1 = Label(fenetre,font=("Arial",10),text="Nombre à convertir ->")
+L1.pack( side = LEFT)
+L1.place(  relx=0.22, rely=0.50,anchor=N)
+E1 = Entry(fenetre, bd =3)
+E1.pack(side = LEFT)
+E1.place( relx=0.5, rely=0.50,anchor=N)
+
+L1 = Label(fenetre,font=("Arial",10),text="Résultat  ->")
+L1.pack( side = LEFT)
+L1.place(  relx=0.27, rely=0.65,anchor=N)
+E1 = Entry(fenetre, bd =3,)
+E1.pack(side = LEFT)
+E1.place( relx=0.5, rely=0.65,anchor=N)
+
 
 #ajout des image
 
