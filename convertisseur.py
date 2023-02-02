@@ -72,19 +72,13 @@ Combo_pays2.pack()
 Combo_pays2.place( relx=0.5, rely=0.412,anchor=N)
 
 
-L1 = Label(fenetre,font=("Arial",10),text="Nombre à convertir ->")
+L1 = Label(fenetre,font=("Arial",10),text="Résultats ->")
 L1.pack( side = LEFT)
 L1.place(  relx=0.22, rely=0.50,anchor=N)
 E1 = Entry(fenetre, bd =3)
 E1.pack(side = LEFT)
 E1.place( relx=0.5, rely=0.50,anchor=N)
 
-L1 = Label(fenetre,font=("Arial",10),text="Résultat  ->")
-L1.pack( side = LEFT)
-L1.place(  relx=0.27, rely=0.65,anchor=N)
-E1 = Entry(fenetre, bd =3,)
-E1.pack(side = LEFT)
-E1.place( relx=0.5, rely=0.65,anchor=N)
 
 
 #ajout des image
